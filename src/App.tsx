@@ -3,6 +3,7 @@ import "./App.css";
 import Area from "./models/Area";
 import SetArea from "./components/SetArea";
 import CreateRobot from "./components/CreateRobot";
+import RobotLog from "./components/RobotLog";
 import { Card, Tabs } from "antd";
 import { useState } from "react";
 
@@ -34,6 +35,7 @@ const App = observer(({ area }: { area: Area }) => {
             <CreateRobot area={area} onActivate={onCreateRobot}/>
           </Tabs.TabPane>
           <Tabs.TabPane tab="Robot Log" key="log">
+            <RobotLog robots={area.robots} />
           </Tabs.TabPane>
         </Tabs>
       </Card>

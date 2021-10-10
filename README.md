@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# Jason Felix's LME Take Home
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+#### Instructions:
 
-### `yarn start`
+To run the app on port ```3000``` run: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```npm start```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To run tests run: 
 
-### `yarn test`
+```npm test```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `yarn build`
+#### How to use:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Set an area size. (You can drag the ```NumberInput``` component to change the value, similar to in Figma). **Remember to hit the Set Dimensions button.**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Set your robot's coordinates, orientation and instructions. You can either type (or copy) the instruction characters ('L', 'R', 'F') in the input field, or click the buttons. You can also delete instructions by either clicking the instruction in the list or backspacing in the field. Hit "Activate Robot" when you're ready to trek.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. View your logs in the Robot Log.
 
-### `yarn eject`
+   **You can reset the state via the Area tab**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Notes: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* I decided not to set up a backend myself as ```create-react-app``` is simple and does everything I need it to. - I hope this keeps within the spirit of this assignment. 
+* I am aware that the deprecated ```window#orientation``` method may name clash with the orientation variable. However it seems to just be vscode on my end playing up.
+* I was originally considering a Movable abstract class or interface but decided against it to keep it simple.
+* I prefer to use a mapped object instead of a switch to map the instructions to functions, in my opinion large switch statements are prone to bugs because it's very easy to miss a break statement. Also, although this needs to be extendable I think anything more complex for processing simple instructions would be overkill. If need be, extraction would be a fairly quick and simple task.
+* Certain arrow functions I abbreviated the types to a letter for a example ```(c: Coordinates, o: Orientation) => ...```, it's just to save some screen space and hopefully the typing is verbose enough.
+* I've implemented a [fail-fast](https://en.wikipedia.org/wiki/Fail-fast) approach. If the input is invalid (which should not be possible through the UI) the app throws and error straight away.
+* I exprimented with displaying a grid for scents and last known locations, however the grid was too large and given the time finding a way to show a mini version didn't seem like a good idea.
+* In the css I used a lot of hardcoded values. I should have used css variables in all places possible. - **I apologise for the state of the styling files.** 
+* I decided against using ReactRouter as there didn't seem to be a need.
+* Due to time constraints I did not make scents viewable.
+* I used MobX as it's an easy to setup/read/follow way to create a reactive UI without the verbosity and boilerplate of Redux.
+* Tested on OS is MacOS Big Sur 11.2 with both Chrome ```Version 94.0.4606.81 (Official Build) (x86_64)``` and Firefox ```90.0.2``` (and it seems to be working correctly).
+* I wouldn't usually use snapshot tests for the UI in isolation. However due to running out of time I used them for some reliability. I believe applying test ids to components clicking through them and checking that the correct dom elements is more reliable.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
