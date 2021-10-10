@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { observer } from "mobx-react";
+import "./App.css";
+import Area from "./models/Area";
+import SetArea from "./components/SetArea";
+import { Card, Tabs } from "antd";
+import { useState } from "react";
 
-function App() {
+const App = observer(({ area }: { area: Area }) => {
+  const [activeKey, setActiveKey] = useState<string>('area');
+
+  const onCreateNew = (width: number, height: number) => {
+    setActiveKey('create-robot');
+    area.setDimensions({ width, height });
+  }
+
+  const onCreateRobot = () => {
+    setActiveKey('log');
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Card title="Jason Felix's LME Tech Test">
+        <Tabs 
+          type="card"
+          activeKey={activeKey}
+          onTabClick={key => setActiveKey(key)}
+          tabBarExtraContent={{right: <>Area Dimensions: width: {area.getDimensions().width} height: {area.getDimensions().height}</>}}
         >
-          Learn React
-        </a>
-      </header>
+          <Tabs.TabPane tab="Area" key="area">
+            <SetArea area={area} onCreate={onCreateNew} />
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="Create Robot" key="create-robot">
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="Robot Log" key="log">
+          </Tabs.TabPane>
+        </Tabs>
+      </Card>
     </div>
   );
-}
+});
 
 export default App;
