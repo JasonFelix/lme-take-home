@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SetArea renders correctly 1`] = `
+<div
+  className="sc-gKseQn cegSSq"
+>
+  <div
+    className="sc-iBPTik cNQcGw"
+  >
+    <svg>
+      planet.svg
+    </svg>
+  </div>
+  <div
+    className="sc-fubCzh bjJhrV"
+  >
+    <div
+      className="ant-space ant-space-vertical"
+      style={Object {}}
+    >
+      <div
+        className="ant-space-item"
+        style={
+          Object {
+            "marginBottom": 8,
+          }
+        }
+      >
+        <div
+          className="sc-hKgJUU emkXtx"
+        >
+          Set Search Area Dimensions
+        </div>
+      </div>
+      <div
+        className="ant-space-item"
+        style={
+          Object {
+            "marginBottom": 8,
+          }
+        }
+      >
+        <div
+          className="sc-eCstlR dsIhwk"
+        >
+          Set the dimensions of the search area.
+        </div>
+      </div>
+      <div
+        className="ant-space-item"
+        style={
+          Object {
+            "marginBottom": 8,
+          }
+        }
+      >
+        <div
+          className="sc-jSgvzq hMVjog"
+        >
+          <div
+            className="sc-bdfBQB ezQBNk"
+            onMouseDown={[Function]}
+          >
+            <span
+              className="sc-gsTEea enATLc"
+            >
+              Width
+            </span>
+            <input
+              className="sc-dlfnuX haFIGb"
+              max={50}
+              min={0}
+              onChange={[Function]}
+              type="number"
+              value={0}
+            />
+          </div>
+          <div
+            className="sc-bdfBQB ezQBNk"
+            onMouseDown={[Function]}
+          >
+            <span
+              className="sc-gsTEea enATLc"
+            >
+              Height
+            </span>
+            <input
+              className="sc-dlfnuX haFIGb"
+              max={50}
+              min={0}
+              onChange={[Function]}
+              type="number"
+              value={0}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="ant-space-item"
+        style={
+          Object {
+            "marginBottom": 8,
+          }
+        }
+      >
+        <button
+          className="ant-btn ant-btn-primary"
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Set Dimensions
+          </span>
+        </button>
+      </div>
+      <div
+        className="ant-space-item"
+        style={Object {}}
+      >
+        <button
+          className="ant-btn ant-btn-primary ant-btn-dangerous"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          type="button"
+        >
+          <span>
+            Reset All Search Data
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

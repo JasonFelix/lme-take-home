@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InstructionSelect renders correctly 1`] = `
+<div
+  className="sc-bdfBQB ktyAFe"
+>
+  <div
+    className="ant-list ant-list-sm ant-list-split ant-list-bordered"
+    style={
+      Object {
+        "height": "100%",
+        "overflowY": "scroll",
+      }
+    }
+  >
+    <div
+      className="ant-spin-nested-loading"
+    >
+      <div
+        className="ant-spin-container"
+      >
+        <ul
+          className="ant-list-items"
+        >
+          <div
+            className="sc-dlfnuX kGVqiQ"
+          >
+            <li
+              className="ant-list-item"
+              onClick={[Function]}
+            >
+              ↑ Walk Forward
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

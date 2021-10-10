@@ -31,7 +31,6 @@ const NumberInput = ({ label, value, min, max, callback }: Props) => {
 
   const mouseup = useCallback((_: MouseEvent) => {
     if (dragging) {
-      console.log(value, mouseDelta);
       updateNumber(clampValue(value + mouseDelta));
       setDragging(false);
       setMouseDelta(0);
