@@ -3,6 +3,9 @@
 
 
 #### Instructions:
+To install run:
+
+```npm i```
 
 To run the app on port ```3000``` run: 
 
