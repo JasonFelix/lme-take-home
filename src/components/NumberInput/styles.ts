@@ -15,17 +15,17 @@ const NumberInputContainer = styled.div<{ dragging: boolean }>`
 
   align-items: center;
   justify-content: center;
-  border: 1px solid ${({ dragging }) => dragging ? '#459FF5' : '#d9d9d9'};
-  transition: border-color .2s linear;
+  border: 1px solid ${({ dragging }) => (dragging ? "#459FF5" : "#d9d9d9")};
+  transition: border-color 0.2s linear;
 
   user-select: none;
 
   &:hover {
-    border: 1px solid ${({ dragging }) => dragging ? '#459FF5' : '#d9d9d9'};
+    border: 1px solid ${({ dragging }) => (dragging ? "#459FF5" : "#d9d9d9")};
     cursor: ew-resize;
   }
-  &:focus-within { 
-    border: 1px solid #459FF5;
+  &:focus-within {
+    border: 1px solid #459ff5;
   }
 `;
 
@@ -49,8 +49,4 @@ const InputContainer = styled.input`
   outline: none;
 `;
 
-export {
-  NumberInputContainer,
-  LabelContainer,
-  InputContainer,
-}
+export { NumberInputContainer, LabelContainer, InputContainer };

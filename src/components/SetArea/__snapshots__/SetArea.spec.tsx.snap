@@ -2,17 +2,17 @@
 
 exports[`SetArea renders correctly 1`] = `
 <div
-  className="sc-gKseQn cegSSq"
+  className="sc-gKseQn desRBu"
 >
   <div
-    className="sc-iBPTik cNQcGw"
+    className="sc-iBPTik iRRsGw"
   >
     <svg>
       planet.svg
     </svg>
   </div>
   <div
-    className="sc-fubCzh bjJhrV"
+    className="sc-fubCzh cZPja-d"
   >
     <div
       className="ant-space ant-space-vertical"
@@ -27,7 +27,7 @@ exports[`SetArea renders correctly 1`] = `
         }
       >
         <div
-          className="sc-hKgJUU emkXtx"
+          className="sc-hKgJUU cxCkCZ"
         >
           Set Search Area Dimensions
         </div>
@@ -41,7 +41,7 @@ exports[`SetArea renders correctly 1`] = `
         }
       >
         <div
-          className="sc-eCstlR dsIhwk"
+          className="sc-eCstlR fjtUHE"
         >
           Set the dimensions of the search area.
         </div>
@@ -55,10 +55,10 @@ exports[`SetArea renders correctly 1`] = `
         }
       >
         <div
-          className="sc-jSgvzq hMVjog"
+          className="sc-jSgvzq iIHiPA"
         >
           <div
-            className="sc-bdfBQB ezQBNk"
+            className="sc-bdfBQB fufubI"
             onMouseDown={[Function]}
           >
             <span
@@ -76,7 +76,7 @@ exports[`SetArea renders correctly 1`] = `
             />
           </div>
           <div
-            className="sc-bdfBQB ezQBNk"
+            className="sc-bdfBQB fufubI"
             onMouseDown={[Function]}
           >
             <span

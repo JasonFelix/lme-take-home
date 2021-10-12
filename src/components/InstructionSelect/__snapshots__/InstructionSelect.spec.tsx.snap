@@ -2,7 +2,7 @@
 
 exports[`InstructionSelect renders correctly 1`] = `
 <div
-  className="sc-bdfBQB ktyAFe"
+  className="sc-bdfBQB brIEGq"
 >
   <div
     className="ant-list ant-list-sm ant-list-split ant-list-bordered"
@@ -23,7 +23,7 @@ exports[`InstructionSelect renders correctly 1`] = `
           className="ant-list-items"
         >
           <div
-            className="sc-dlfnuX kGVqiQ"
+            className="sc-dlfnuX cjImgY"
           >
             <li
               className="ant-list-item"

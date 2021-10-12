@@ -47,4 +47,4 @@ export {
   HorizontalGroup,
   Group,
   Text,
-}
+};

@@ -2,17 +2,17 @@
 
 exports[`RobotLog renders correctly 1`] = `
 <div
-  className="sc-hKgJUU jQiqqX"
+  className="sc-hKgJUU bvxKFL"
 >
   <div
-    className="sc-gsTEea hWqsdE"
+    className="sc-gsTEea iLOGwI"
   >
     <svg>
       list.svg
     </svg>
   </div>
   <div
-    className="sc-dlfnuX jBvXmE"
+    className="sc-dlfnuX fgLppI"
   >
     <div
       className="ant-table-wrapper"
