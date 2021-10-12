@@ -23,7 +23,7 @@ exports[`InstructionSelect renders correctly 1`] = `
           className="ant-list-items"
         >
           <div
-            className="sc-dlfnuX cjImgY"
+            className="sc-dlfnuX VlblE"
           >
             <li
               className="ant-list-item"

@@ -1,6 +1,6 @@
-import { makeAutoObservable } from "mobx";
-import Robot from "./Robot";
-import { Coordinates, Dimensions } from "./types";
+import { makeAutoObservable } from 'mobx';
+import Robot from './Robot';
+import { Coordinates, Dimensions } from './types';
 
 export default class Area {
   _robots: Array<Robot> = [];

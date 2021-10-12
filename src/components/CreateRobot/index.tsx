@@ -1,14 +1,14 @@
-import { Input, Select, Space, Button } from "antd";
+import { Input, Select, Space, Button } from 'antd';
 
-import { useState } from "react";
-import { observer } from "mobx-react";
-import NumberInput from "../NumberInput";
-import { ReactComponent as RobotSVG } from "../../images/robot.svg";
+import { useState } from 'react';
+import { observer } from 'mobx-react';
+import NumberInput from '../NumberInput';
+import { ReactComponent as RobotSVG } from '../../images/robot.svg';
 
-import InstructionSelect from "../InstructionSelect";
-import { Coordinates, Instruction, Orientation } from "../../models/types";
-import Area from "../../models/Area";
-import Robot from "../../models/Robot";
+import InstructionSelect from '../InstructionSelect';
+import { Coordinates, Instruction, Orientation } from '../../models/types';
+import Area from '../../models/Area';
+import Robot from '../../models/Robot';
 import {
   Title,
   Text,
@@ -16,8 +16,8 @@ import {
   Group,
   Header,
   DimensionsInput,
-} from "./styles";
-import { Container, LeftContainer, RightContainer } from "../Panel/styles";
+} from './styles';
+import { Container, LeftContainer, RightContainer } from '../Panel/styles';
 
 interface Props {
   area: Area;
@@ -27,20 +27,20 @@ interface Props {
 const CreateRobot = observer(({ area, onActivate }: Props) => {
   const [instructions, setInstructions] = useState<Array<Instruction>>([]);
   const [coordinates, setCoordinates] = useState<Coordinates>({ x: 0, y: 0 });
-  const [orientation, setOrientation] = useState<Orientation>("N");
+  const [orientation, setOrientation] = useState<Orientation>('N');
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const uppercase = e.target.value.toUpperCase();
     const filtered = uppercase
-      .split("")
-      .filter((c) => ["L", "R", "F"].includes(c));
+      .split('')
+      .filter((c) => ['L', 'R', 'F'].includes(c));
     setInstructions(filtered.slice(0, 100) as Instruction[]);
   };
 
   const reset = () => {
     setInstructions([]);
     setCoordinates({ x: 0, y: 0 });
-    setOrientation("N");
+    setOrientation('N');
   };
 
   const activateRobot = () => {
@@ -63,7 +63,7 @@ const CreateRobot = observer(({ area, onActivate }: Props) => {
     ]);
   };
 
-  const instructionsString = instructions.join("");
+  const instructionsString = instructions.join('');
 
   return (
     <Container>
@@ -73,7 +73,7 @@ const CreateRobot = observer(({ area, onActivate }: Props) => {
       <RightContainer>
         <Space
           direction="vertical"
-          style={{ width: "100%", paddingRight: "16px" }}
+          style={{ width: '100%', paddingRight: '16px' }}
         >
           <Title>Create a Robot</Title>
           <HorizontalGroup>
@@ -120,9 +120,9 @@ const CreateRobot = observer(({ area, onActivate }: Props) => {
           <Input type="text" value={instructionsString} onChange={onChange} />
           <HorizontalGroup>
             <Space direction="horizontal">
-              <Button onClick={() => addInstruction("L")}>Turn Left</Button>
-              <Button onClick={() => addInstruction("F")}>Walk Forward</Button>
-              <Button onClick={() => addInstruction("R")}>Turn Right</Button>
+              <Button onClick={() => addInstruction('L')}>Turn Left</Button>
+              <Button onClick={() => addInstruction('F')}>Walk Forward</Button>
+              <Button onClick={() => addInstruction('R')}>Turn Right</Button>
             </Space>
           </HorizontalGroup>
           <InstructionSelect

@@ -39,6 +39,9 @@
       "react-app/jest"
     ]
   },
+  "prettier": {
+    "singleQuote": false
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -54,14 +57,13 @@
   "devDependencies": {
     "@types/react-test-renderer": "^17.0.1",
     "@types/styled-components": "^5.1.15",
+    "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
     "prettier": "2.4.1",
-    "pretty-quick": "^3.1.1",
     "react-test-renderer": "^17.0.2"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,css,md}": "prettier --write",
-    "*.{js,css,md}": "prettier --write"
+    "*.{ts,tsx,js,css,md}": "prettier --write --single-quote"
   }
 }

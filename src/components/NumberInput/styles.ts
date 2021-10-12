@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const NumberInputContainer = styled.div<{ dragging: boolean }>`
   background-color: white;
@@ -15,13 +15,13 @@ const NumberInputContainer = styled.div<{ dragging: boolean }>`
 
   align-items: center;
   justify-content: center;
-  border: 1px solid ${({ dragging }) => (dragging ? "#459FF5" : "#d9d9d9")};
+  border: 1px solid ${({ dragging }) => (dragging ? '#459FF5' : '#d9d9d9')};
   transition: border-color 0.2s linear;
 
   user-select: none;
 
   &:hover {
-    border: 1px solid ${({ dragging }) => (dragging ? "#459FF5" : "#d9d9d9")};
+    border: 1px solid ${({ dragging }) => (dragging ? '#459FF5' : '#d9d9d9')};
     cursor: ew-resize;
   }
   &:focus-within {

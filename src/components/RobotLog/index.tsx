@@ -1,9 +1,9 @@
-import { Table } from "antd";
-import { observer } from "mobx-react";
-import styled from "styled-components";
-import Robot from "../../models/Robot";
-import { ReactComponent as List } from "../../images/list.svg";
-import { LeftContainer, RightContainer } from "../Panel/styles";
+import { Table } from 'antd';
+import { observer } from 'mobx-react';
+import styled from 'styled-components';
+import Robot from '../../models/Robot';
+import { ReactComponent as List } from '../../images/list.svg';
+import { LeftContainer, RightContainer } from '../Panel/styles';
 
 interface Props {
   robots: Robot[];
@@ -11,29 +11,29 @@ interface Props {
 
 const columns = [
   {
-    title: "Id",
-    dataIndex: "id",
-    key: "id",
+    title: 'Id',
+    dataIndex: 'id',
+    key: 'id',
   },
   {
-    title: "Last Known Location",
-    dataIndex: "coordinates",
-    key: "coordinates",
+    title: 'Last Known Location',
+    dataIndex: 'coordinates',
+    key: 'coordinates',
   },
   {
-    title: "Orientation",
-    dataIndex: "orientation",
-    key: "orientation",
+    title: 'Orientation',
+    dataIndex: 'orientation',
+    key: 'orientation',
   },
   {
-    title: "Is Lost?",
-    dataIndex: "lost",
-    key: "lost",
+    title: 'Is Lost?',
+    dataIndex: 'lost',
+    key: 'lost',
   },
   {
-    title: "Output",
-    dataIndex: "output",
-    key: "output",
+    title: 'Output',
+    dataIndex: 'output',
+    key: 'output',
   },
 ];
 
@@ -50,10 +50,10 @@ const Container = styled.div`
 
 const RobotLog = observer(({ robots }: Props) => {
   const ORIENTATION_MAP = {
-    N: "North",
-    S: "South",
-    E: "East",
-    W: "West",
+    N: 'North',
+    S: 'South',
+    E: 'East',
+    W: 'West',
   };
 
   const data = robots.map((robot, index) => ({
@@ -65,10 +65,10 @@ const RobotLog = observer(({ robots }: Props) => {
     id: index + 1,
     coordinates: `x: ${robot.lastKnownCoordinates.x}, y:${robot.lastKnownCoordinates.y}`,
     orientation: ORIENTATION_MAP[robot.orientation],
-    lost: robot.isLost() ? "LOST" : "Location Known",
+    lost: robot.isLost() ? 'LOST' : 'Location Known',
     output: `${robot.lastKnownCoordinates.x} ${robot.lastKnownCoordinates.y} ${
       robot.orientation
-    }${robot.isLost() ? " LOST" : ""}`,
+    }${robot.isLost() ? ' LOST' : ''}`,
   }));
   return (
     <Container>
@@ -77,7 +77,7 @@ const RobotLog = observer(({ robots }: Props) => {
       </LeftContainer>
       <RightContainer>
         <Table
-          style={{ height: "100%", width: "100%" }}
+          style={{ height: '100%', width: '100%' }}
           columns={columns}
           dataSource={data}
         />

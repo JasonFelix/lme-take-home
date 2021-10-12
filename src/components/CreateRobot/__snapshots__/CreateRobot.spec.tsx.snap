@@ -393,11 +393,9 @@ exports[`CreateRobot renders correctly 1`] = `
         <div
           className="sc-iqHYmW cxSVAc"
         >
-          Instructions
-           
+          Instructions 
           0
-           
-          / 100
+           / 100
         </div>
       </div>
       <div

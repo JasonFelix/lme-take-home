@@ -1,11 +1,11 @@
-import { Button, Space, Popconfirm } from "antd";
-import { useState } from "react";
-import { observer } from "mobx-react";
-import NumberInput from "../NumberInput";
-import { ReactComponent as Planet } from "../../images/planet.svg";
-import { Title, Description, DimensionsInput } from "./styles";
-import Area from "../../models/Area";
-import { Container, LeftContainer, RightContainer } from "../Panel/styles";
+import { Button, Space, Popconfirm } from 'antd';
+import { useState } from 'react';
+import { observer } from 'mobx-react';
+import NumberInput from '../NumberInput';
+import { ReactComponent as Planet } from '../../images/planet.svg';
+import { Title, Description, DimensionsInput } from './styles';
+import Area from '../../models/Area';
+import { Container, LeftContainer, RightContainer } from '../Panel/styles';
 
 interface Props {
   onCreate: (width: number, height: number) => void;

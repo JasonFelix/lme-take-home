@@ -1,8 +1,8 @@
-import renderer from "react-test-renderer";
-import NumberInput from ".";
+import renderer from 'react-test-renderer';
+import NumberInput from '.';
 
-it("NumberInput renders correctly", () => {
-  document.addEventListener("DOMContentLoaded", () => {
+it('NumberInput renders correctly', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const tree = renderer
       .create(
         <NumberInput

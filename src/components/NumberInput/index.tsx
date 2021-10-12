@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-import { NumberInputContainer, LabelContainer, InputContainer } from "./styles";
+import { useCallback, useEffect, useState } from 'react';
+import { NumberInputContainer, LabelContainer, InputContainer } from './styles';
 
 interface Props {
   label: string;
@@ -61,12 +61,12 @@ const NumberInput = ({
   );
 
   useEffect(() => {
-    window.addEventListener("mousemove", mousemove, { passive: true });
-    window.addEventListener("mouseup", mouseup, { passive: true });
+    window.addEventListener('mousemove', mousemove, { passive: true });
+    window.addEventListener('mouseup', mouseup, { passive: true });
 
     return () => {
-      window.removeEventListener("mousemove", mousemove);
-      window.removeEventListener("mouseup", mouseup);
+      window.removeEventListener('mousemove', mousemove);
+      window.removeEventListener('mouseup', mouseup);
     };
   }, [mousemove, mouseup]);
 

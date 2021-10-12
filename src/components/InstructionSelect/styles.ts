@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const InstructionSelectContainer = styled.div`
   height: 300px;
@@ -23,7 +23,7 @@ const Option = styled.div`
 
   &:before {
     counter-increment: instruction-list; /* Increment the value of section counter by 1 */
-    content: counter(instruction-list) ". ";
+    content: counter(instruction-list) '. ';
     width: 32px;
     text-align: right;
     align-items: center;
@@ -33,7 +33,7 @@ const Option = styled.div`
 
   &:hover {
     &:after {
-      content: "remove";
+      content: 'remove';
       height: 100%;
       flex: 1;
       text-align: right;

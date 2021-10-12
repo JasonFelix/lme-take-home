@@ -1,6 +1,6 @@
-import { makeAutoObservable } from "mobx";
-import Area from "./Area";
-import { Coordinates, Instruction, Orientation } from "./types";
+import { makeAutoObservable } from 'mobx';
+import Area from './Area';
+import { Coordinates, Instruction, Orientation } from './types';
 
 export default class Robot {
   private _area: Area | undefined;
@@ -21,11 +21,11 @@ export default class Robot {
    */
   constructor(
     coordinates: Coordinates = { x: 0, y: 0 },
-    orientation: Orientation = "N",
+    orientation: Orientation = 'N',
     instructions: Array<Instruction>
   ) {
     if (instructions.length > 100) {
-      throw new Error("Instruction size too large. Maximum size is 100.");
+      throw new Error('Instruction size too large. Maximum size is 100.');
     }
     this._coordinates = coordinates;
     this._lastKnownCoordinates = coordinates;
@@ -82,7 +82,7 @@ export default class Robot {
   print(): string {
     return `${this.lastKnownCoordinates.x} ${this.lastKnownCoordinates.y} ${
       this.orientation
-    }${this.isLost() ? " LOST" : ""}`;
+    }${this.isLost() ? ' LOST' : ''}`;
   }
 
   /**
@@ -92,11 +92,11 @@ export default class Robot {
     const instruction = this.instructions.shift();
 
     if (!instruction) {
-      throw new Error("Robot does not have any instructions.");
+      throw new Error('Robot does not have any instructions.');
     }
 
     if (!this.area) {
-      throw new Error("Robot does not have a area.");
+      throw new Error('Robot does not have a area.');
     }
     const [newCoordinates, newOrientation] = this.processor[instruction](
       this.coordinates,
@@ -148,7 +148,7 @@ export default class Robot {
     orientation: Orientation,
     modifier: number
   ): Orientation {
-    const compass: Orientation[] = ["N", "E", "S", "W"];
+    const compass: Orientation[] = ['N', 'E', 'S', 'W'];
     const currentOrientation = compass.findIndex(
       (o: Orientation) => o === orientation
     );

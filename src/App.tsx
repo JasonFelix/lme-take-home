@@ -1,22 +1,22 @@
-import { observer } from "mobx-react";
-import "./App.css";
-import { Card, Tabs } from "antd";
-import { useState } from "react";
-import Area from "./models/Area";
-import SetArea from "./components/SetArea";
-import CreateRobot from "./components/CreateRobot";
-import RobotLog from "./components/RobotLog";
+import { observer } from 'mobx-react';
+import './App.css';
+import { Card, Tabs } from 'antd';
+import { useState } from 'react';
+import Area from './models/Area';
+import SetArea from './components/SetArea';
+import CreateRobot from './components/CreateRobot';
+import RobotLog from './components/RobotLog';
 
 const App = observer(({ area }: { area: Area }) => {
-  const [activeKey, setActiveKey] = useState<string>("area");
+  const [activeKey, setActiveKey] = useState<string>('area');
 
   const onCreateNew = (width: number, height: number) => {
-    setActiveKey("create-robot");
+    setActiveKey('create-robot');
     area.dimensions = { width, height };
   };
 
   const onCreateRobot = () => {
-    setActiveKey("log");
+    setActiveKey('log');
   };
 
   return (
@@ -29,7 +29,7 @@ const App = observer(({ area }: { area: Area }) => {
           tabBarExtraContent={{
             right: (
               <>
-                Area Dimensions: width: {area.dimensions.width} height:{" "}
+                Area Dimensions: width: {area.dimensions.width} height:{' '}
                 {area.dimensions.height}
               </>
             ),
