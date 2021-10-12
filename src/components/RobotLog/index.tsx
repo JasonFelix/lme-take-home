@@ -57,12 +57,12 @@ const RobotLog = observer(({ robots }: Props) => {
   }
 
   const data = robots.map((robot, index) => ({
-    key: `${index + 1}${`${robot.getLastKnownCoordinates.x},${robot.getLastKnownCoordinates.y}`}${ORIENTATION_MAP[robot.getOrientation]}${robot.isLost() ? 1 : 0}`,
+    key: `${index + 1}${`${robot.lastKnownCoordinates.x},${robot.lastKnownCoordinates.y}`}${ORIENTATION_MAP[robot.orientation]}${robot.isLost() ? 1 : 0}`,
     id: index + 1,
-    coordinates: `x: ${robot.getLastKnownCoordinates.x}, y:${robot.getLastKnownCoordinates.y}`,
-    orientation: ORIENTATION_MAP[robot.getOrientation],
+    coordinates: `x: ${robot.lastKnownCoordinates.x}, y:${robot.lastKnownCoordinates.y}`,
+    orientation: ORIENTATION_MAP[robot.orientation],
     lost: robot.isLost() ? 'LOST' : 'Location Known',
-    output: `${robot.getLastKnownCoordinates.x} ${robot.getLastKnownCoordinates.y} ${robot.getOrientation}${robot.isLost() ? ' LOST' : ''}`,
+    output: `${robot.lastKnownCoordinates.x} ${robot.lastKnownCoordinates.y} ${robot.orientation}${robot.isLost() ? ' LOST' : ''}`,
   }))
   return <Container>
     <LeftContainer>

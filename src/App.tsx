@@ -12,7 +12,7 @@ const App = observer(({ area }: { area: Area }) => {
 
   const onCreateNew = (width: number, height: number) => {
     setActiveKey('create-robot');
-    area.setDimensions({ width, height });
+    area.dimensions = { width, height };
   }
 
   const onCreateRobot = () => {
@@ -26,7 +26,7 @@ const App = observer(({ area }: { area: Area }) => {
           type="card"
           activeKey={activeKey}
           onTabClick={key => setActiveKey(key)}
-          tabBarExtraContent={{right: <>Area Dimensions: width: {area.getDimensions().width} height: {area.getDimensions().height}</>}}
+          tabBarExtraContent={{right: <>Area Dimensions: width: {area.dimensions.width} height: {area.dimensions.height}</>}}
         >
           <Tabs.TabPane tab="Area" key="area">
             <SetArea area={area} onCreate={onCreateNew} />

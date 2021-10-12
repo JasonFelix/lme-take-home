@@ -5,7 +5,7 @@ import Area from './models/Area';
 
 it('App renders correctly', () => {
   document.addEventListener('DOMContentLoaded', () => {
-  const area: Area = new Area(0, 0, 50, 50);
+  const area: Area = new Area({ width: 0, height: 0 }, { width: 50, height: 50 });
   const tree = renderer.create(<App area={area}/>).toJSON();
   expect(tree).toMatchSnapshot();
   });

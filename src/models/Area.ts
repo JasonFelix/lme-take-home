@@ -8,23 +8,23 @@ export default class Area {
 
   /**
    * 
-   * @param width : Size of grid width. Maximum size is 50.
-   * @param height : Size of grid width. Maximum size is 50.
+   * @param width : Size of grid width. Default size is 50.
+   * @param height : Size of grid width. Default size is 50.
    */
-  constructor(private width: number, private height: number, private maxWidth: number, private maxHeight: number) {
-    if (width > this.maxWidth || this.maxHeight > 50) {
-      throw new Error(`Grid height / width too large. The max width is ${maxWidth} / height is ${maxHeight}.`);
+  constructor(private _dimensions: Dimensions, private _maxDimensions: Dimensions = { width: 50, height: 50 }) {
+    if (this.dimensions.width > this._maxDimensions.width || this._maxDimensions.height > 50) {
+      throw new Error(`Grid height / width too large. The max width is ${this._maxDimensions.width} / height is ${this._maxDimensions.height}.`);
     }
     makeAutoObservable(this);
   }
 
   addRobot(robot: Robot): void {
-    robot.setArea(this);
+    robot.area = this;
 
     while (robot.hasInstructions() && !robot.isLost()) {
-      const prev = robot.getCoordinates;
+      const prev = robot.coordinates;
       robot.move();
-      const post = robot.getCoordinates;
+      const post = robot.coordinates;
       if (!this.withinBounds(post)) {
         this.scents.set(JSON.stringify(prev), true);
         continue;
@@ -34,26 +34,26 @@ export default class Area {
     this.robots.push(robot);
   }
 
-  setDimensions({ width, height}: Dimensions) {
-    if (width > this.maxWidth || this.maxHeight > 50) {
-      throw new Error(`Grid height / width too large. The max width is ${this.maxWidth} / height is ${this.maxHeight}.`);
-    }
-    this.width = width;
-    this.height = height
+  get dimensions() {
+    return this._dimensions;
   }
 
-  getDimensions() {
-    return { width: this.width, height: this.height };
+  set dimensions({ width, height }: Dimensions) {
+    if (width > this._maxDimensions.width || this._maxDimensions.height > 50) {
+      throw new Error(`Grid height / width too large. The max width is ${this._maxDimensions.width} / height is ${this._maxDimensions.height}.`);
+    }
+    this.dimensions.width = width;
+    this.dimensions.height = height
   }
 
   purge() {
     this.robots = [];
     this.scents = new Map();
-    this.width = 0;
-    this.height = 0;
+    this.dimensions.width = 0;
+    this.dimensions.height = 0;
   }
 
   withinBounds({ x, y }: Coordinates) {
-    return x >= 0 && y >= 0 && x <= this.width && y <= this.height;
+    return x >= 0 && y >= 0 && x <= this.dimensions.width && y <= this.dimensions.height;
   }
 }

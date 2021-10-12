@@ -70,7 +70,7 @@ const CreateRobot = observer(({ area, onActivate }: Props) => {
           <Group>
             <Header>Starting Orientation</Header>
             <DimensionsInput>
-              <Select defaultValue="N" onChange={(orientation: Orientation) => setOrientation(orientation)}>
+              <Select defaultValue="N" value={orientation} onChange={(orientation: Orientation) => setOrientation(orientation)}>
                 <Select.Option value="N">North</Select.Option>
                 <Select.Option value="S">South</Select.Option>
                 <Select.Option value="E">East</Select.Option>

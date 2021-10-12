@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import Area from './models/Area';
 
-const area: Area = new Area(0, 0, 50, 50);
+const area: Area = new Area({ width: 0, height: 0 }, { width: 50, height: 50 });
 
 ReactDOM.render(
   <React.StrictMode>

@@ -3,11 +3,11 @@ import Area from "./Area";
 import { Coordinates, Instruction, Orientation } from "./types";
 
 export default class Robot {
-  private area: Area | undefined;
-  private coordinates: Coordinates;
-  private lastKnownCoordinates: Coordinates;
-  private orientation: Orientation;
-  private instructions: Array<Instruction>;
+  private _area: Area | undefined;
+  private _coordinates: Coordinates;
+  private _lastKnownCoordinates: Coordinates;
+  private _orientation: Orientation;
+  private _instructions: Array<Instruction>;
 
   /**
    * 
@@ -23,40 +23,48 @@ export default class Robot {
     if (instructions.length > 100) {
       throw new Error('Instruction size too large. Maximum size is 100.');
     }
-    this.coordinates = coordinates;
-    this.lastKnownCoordinates = coordinates;
-    this.orientation = orientation;
-    this.instructions = instructions;
+    this._coordinates = coordinates;
+    this._lastKnownCoordinates = coordinates;
+    this._orientation = orientation;
+    this._instructions = instructions;
     
     makeAutoObservable(this);
   }
 
-  get getCoordinates() {
-    return {...this.coordinates}; // return clone instead of ref.
+  get coordinates() {
+    return this._coordinates;
   }
 
-  get getLastKnownCoordinates() {
-    return this.lastKnownCoordinates;
+  get lastKnownCoordinates() {
+    return this._lastKnownCoordinates;
   }
 
-  get getOrientation() {
-    return this.orientation;
+  set lastKnownCoordinates(coordinates: Coordinates) {
+    this._lastKnownCoordinates = coordinates;
   }
 
-  get getInstructions() {
-    return this.instructions;
+  get orientation() {
+    return this._orientation;
   }
 
-  setArea(area: Area) {
-    this.area = area;
+  get instructions() {
+    return this._instructions;
   }
 
-  private set setCoordinates(coordinates: Coordinates) {
-    this.coordinates = coordinates;
+  get area(): Area | undefined {
+    return this._area;
   }
 
-  private set setOrientation(orientation: Orientation) {
-    this.orientation = orientation;
+  set area(area: Area | undefined) {
+    this._area = area;
+  }
+
+  private set coordinates(coordinates: Coordinates) {
+    this._coordinates = coordinates;
+  }
+
+  private set orientation(orientation: Orientation) {
+    this._orientation = orientation;
   }
 
   hasInstructions(): boolean {
@@ -87,9 +95,9 @@ export default class Robot {
     const [newCoordinates, newOrientation] = this.processor[instruction](this.coordinates, this.orientation);
 
     if (this.area.withinBounds(newCoordinates) || !this.area.scents.has(JSON.stringify(this.coordinates))) {
-      this.setCoordinates = newCoordinates;
+      this.coordinates = newCoordinates;
     }
-    this.setOrientation = newOrientation;
+    this.orientation = newOrientation;
 
     if (this.area.withinBounds(this.coordinates)) {
       this.lastKnownCoordinates = {...this.coordinates};
