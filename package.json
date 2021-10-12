@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +48,7 @@
   "devDependencies": {
     "@types/react-test-renderer": "^17.0.1",
     "@types/styled-components": "^5.1.15",
+    "husky": "^7.0.2",
     "react-test-renderer": "^17.0.2"
   }
 }
